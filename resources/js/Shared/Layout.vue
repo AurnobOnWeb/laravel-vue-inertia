@@ -2,6 +2,7 @@
     <section class="p-6 bg-gray-200">
         <header class="flex justify-between">
             <h1 class="font-bold text-lg">My inertia App</h1>
+            <p>Welcome Back , {{ $page.props.auth.user.userName }}!</p>
             <Nav />
         </header>
     </section>
