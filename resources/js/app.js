@@ -1,6 +1,6 @@
 import { createApp, h } from "vue";
 import { createInertiaApp } from "@inertiajs/vue3";
-
+import { Link, Head } from "@inertiajs/vue3";
 //for progress bar
 import NProgress from "nprogress";
 import { router } from "@inertiajs/vue3";
@@ -17,6 +17,8 @@ createInertiaApp({
     setup({ el, App, props, plugin }) {
         createApp({ render: () => h(App, props) })
             .use(plugin)
+            .component("Link", Link)
+            .component("Head", Head)
             .mount(el);
     },
     progress: {
