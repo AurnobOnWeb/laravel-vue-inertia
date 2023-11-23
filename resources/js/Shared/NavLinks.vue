@@ -2,7 +2,7 @@
     <li>
         <Link
             :href="href"
-            class="text-blue-600"
+            class="text-black"
             :class="{ 'font-bold  underline': active }"
             ><slot></slot
         ></Link>
