@@ -1,5 +1,5 @@
 <template>
-    <div>Users</div>
+    <h1  class="text-4xl">Users</h1>
     <Nav></Nav>
 
     <div class="mt-[1000px] flex gap-5">
