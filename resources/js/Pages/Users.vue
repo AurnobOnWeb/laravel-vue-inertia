@@ -18,7 +18,7 @@
                 <tbody>
                     <tr
                         class="bg-white border-b dark:bg-gray-800 dark:border-gray-700"
-                        v-for="(users, id) in user"
+                        v-for="(users, id) in user.data"
                         :key="users.id"
                     >
                         <td class="px-6 py-4">{{ users.id }}</td>
@@ -38,6 +38,8 @@
                     </tr>
                 </tbody>
             </table>
+
+            <Pagination :links="user.links" />
         </div>
     </div>
 
@@ -47,8 +49,10 @@
 </template>
 
 <script setup>
+import Pagination from "../Shared/Pagination.vue";
+
 defineProps({
-    user: Array,
+    user: Object,
 });
 </script>
 
