@@ -1,7 +1,7 @@
 <?php
 
 use Illuminate\Support\Facades\Route;
-
+use Inertia\Inertia;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -14,5 +14,8 @@ use Illuminate\Support\Facades\Route;
 */
 
 Route::get('/', function () {
-    return Inertia('Welcome');
+    return Inertia::render('Home', [
+        'name' => 'Abir Hossen',
+        'Framework' => ['Laravel', 'vue', 'React'],
+    ]);
 });
