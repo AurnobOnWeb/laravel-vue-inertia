@@ -17,8 +17,8 @@
             />
             <span
                 class="text-red-400"
-                v-if="errors.name"
-                v-html="errors.name"
+                v-if="form.errors.name"
+                v-html="form.errors.name"
             ></span>
         </div>
         <div class="flex items-center text-lg mb-6 md:mb-8">
@@ -36,8 +36,8 @@
             />
             <span
                 class="text-red-400"
-                v-if="errors.email"
-                v-html="errors.email"
+                v-if="form.errors.email"
+                v-html="form.errors.email"
             ></span>
         </div>
         <div class="flex items-center text-lg mb-6 md:mb-8">
@@ -55,8 +55,8 @@
             />
             <span
                 class="text-red-400"
-                v-if="errors.password"
-                v-html="errors.password"
+                v-if="form.errors.password"
+                v-html="form.errors.password"
             ></span>
         </div>
         <button
@@ -68,21 +68,16 @@
 </template>
 
 <script setup>
-import { reactive } from "vue";
-import { router } from "@inertiajs/vue3";
+import { useForm } from "@inertiajs/vue3";
 
-defineProps({
-    errors: Object,
-});
-
-const form = reactive({
+const form = useForm({
     name: "",
     email: "",
     password: "",
 });
 
 const submit = () => {
-    router.post("/users", form);
+    form.post("/users");
 };
 </script>
 
