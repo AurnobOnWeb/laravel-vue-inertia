@@ -4,8 +4,14 @@
     <div class="mt-10">
         <div class="relative overflow-x-auto shadow-md sm:rounded-lg">
             <div
-                class="h-16 bg-white mb-2 shadow-xl flex items-center justify-end"
+                class="h-16 bg-white mb-2 shadow-xl flex items-center justify-between"
             >
+                <Link
+                    class="ml-2 text-white bg-green-400 p-3 rounded hover:bg-green-500"
+                    href="/users/create"
+                >
+                    New user
+                </Link>
                 <input
                     class="p-2 px-4 mr-2 border border-blue-200 rounded"
                     placeholder="Search"
@@ -58,7 +64,7 @@
 </template>
 
 <script setup>
-import Pagination from "../Shared/Pagination.vue";
+import Pagination from "../../Shared/Pagination.vue";
 import { ref, watch } from "vue";
 import { router } from "@inertiajs/vue3";
 
